@@ -1,37 +1,33 @@
 ﻿using System;
 
-namespace project_1
+namespace Project_2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter your start: ");
+            int x;
+            int sum = 0;
+            Console.WriteLine("Please enter the start");
             int start = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("please enter the end: ");
+            Console.WriteLine("Please enter the End");
             int end = int.Parse(Console.ReadLine());
-            Console.WriteLine("Prime numbers are :");
 
-            int i;
-            for (i = start; i <= end; i++)
+            for (x = start; x <= end; x++)
             {
-                bool primenumber = true;
-                for (int j = 2; j < i; j++)
+                for (int j = 1; j < x; j++)
                 {
-                    if (i % j == 0)
+                    if (x % j == 0)
                     {
-                        primenumber = false;
-                        break;
+                        sum += j;
                     }
                 }
-                if (primenumber)
+                if (sum == x)
                 {
-                    Console.WriteLine(i);
+                    Console.WriteLine("Perfect numbers are: " + sum);
                 }
+                sum = 0;
             }
-
-
         }
     }
 }
